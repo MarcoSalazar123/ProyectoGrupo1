@@ -23,7 +23,19 @@ public class Inventario {
             this.productos.add(p);
             return this.productos;
         }
-
-
     }
+
+    //Segunda historia de usuario == retirar productos
+
+    public boolean verificarCantidad(String codigo, int cantidad) {
+        for (Producto p : this.productos) {
+            if (p.getCodigo().equals(codigo)) {
+                if (p.getCantidad() >= cantidad) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
