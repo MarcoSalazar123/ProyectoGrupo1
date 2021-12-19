@@ -14,4 +14,16 @@ public class Inventario {
         }
         return false;
     }
+
+    public ArrayList<Producto> registrarProducto(Producto p) {
+        if( this.verificarProducto(p.getCodigo())) {
+            return this.productos;
+
+        }else {
+            this.productos.add(p);
+            return this.productos;
+        }
+
+
+    }
 }
