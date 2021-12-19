@@ -19,7 +19,7 @@ public class InventarioTest {
         inventario = new Inventario();
         inventario2 = new Inventario();
         inventario3 = new Inventario();
-        producto2 = new Producto("001","Coca Cola",8);
+        producto2 = new Producto("001","Coca Cola",50);
         producto = new Producto("002","Manzanas",15);
         inventario2.productos.add(producto);
         inventario3.productos.add(producto2);
@@ -43,6 +43,11 @@ public class InventarioTest {
     public void given_amount_product_when_sufficientQuantity_then_ok() {
         boolean expected= inventario3.verificarCantidad("001", 8);
         assertTrue(expected);
+    }
+    @Test
+    public void given_product_when_retireAmount_then_changeAmount() {
+        assertEquals(inventario3.retirarCantidadProducto("001",25).getCantidad(),25);
+
     }
 
 }

@@ -1,6 +1,7 @@
 package ec.edu.epn.ProyectoGrupo1;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Inventario {
 
@@ -16,10 +17,10 @@ public class Inventario {
     }
 
     public ArrayList<Producto> registrarProducto(Producto p) {
-        if( this.verificarProducto(p.getCodigo())) {
+        if (this.verificarProducto(p.getCodigo())) {
             return this.productos;
 
-        }else {
+        } else {
             this.productos.add(p);
             return this.productos;
         }
@@ -38,4 +39,17 @@ public class Inventario {
         return false;
     }
 
+    public Producto retirarCantidadProducto(String codigo, int cantidad) {
+        if (this.verificarCantidad(codigo, cantidad)) {
+
+            for (Producto p : this.productos) {
+                if (p.getCodigo().equals(codigo)) {
+                    p.setCantidad(p.getCantidad() - cantidad);
+                    return p;
+
+                }
+            }
+        }
+        return null;
+    }
 }
