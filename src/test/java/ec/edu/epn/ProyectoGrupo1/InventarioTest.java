@@ -19,7 +19,7 @@ public class InventarioTest {
         producto = new Producto("002","Manzanas",15);
         inventario2.productos.add(producto);
     }
-    //Primera historia de usuario == Registrar un producto
+
     @Test
     public void given_name_product_when_exists_then_error() {
         boolean expected= inventario.verificarProducto("001");
@@ -31,7 +31,4 @@ public class InventarioTest {
         assertArrayEquals(inventario.registrarProducto(producto).toArray(),inventario2.productos.toArray());
 
     }
-
-
-
 }
