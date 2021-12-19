@@ -9,5 +9,10 @@ public class ProyectoExecute {
         inventario.registrarProducto(producto);
         System.out.println(inventario.productos);
 
+        System.out.println("\n == Segunda historia de usuario ==");
+
+        inventario.retirarCantidadProducto("001",25);
+        System.out.println(inventario.productos);
+
     }
 }
